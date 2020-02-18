@@ -1,0 +1,13 @@
+<h1> <b>COOKBOOK</b></h1><br>
+<% @recipes.each do |recipe| %>
+  <li>
+    <%= recipe.name + "(Difficulty: #{recipe.difficulty} / Prep. Time: #{recipe.prep_time})" %><br>
+    <%= "Description: " + recipe.description %><br><br>
+  </li>
+<% end %>
+<form action="/destroyrecipe" method="post">
+  Destroy Recipe (index)?
+  <input type="integer" name="index">
+  <input type="submit" value="Submit">
+</form>
+<button onclick="window.location.href = 'http://localhost:4567/new';">Create Recipe</button>
